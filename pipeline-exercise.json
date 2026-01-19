@@ -4,7 +4,7 @@
       "instructor": "Antoine Coppin",
       "date": "19/01/2026",
       "exercise_version": "1.0",
-      "instructions": "Remplacez chaque '________________' par votre réponse (A, B, C ou D pour QCM, texte exact pour code)",
+      "instructions": "Remplacez chaque 'B' par votre réponse (A, B, C ou D pour QCM, texte exact pour code)",
       "time_limit": "20 minutes",
       "total_points": "20 points (10 QCM + 10 Code)",
       "passing_grade": "14/20"
@@ -20,7 +20,7 @@
           "C) Optimisation des hyperparamètres",
           "D) Documentation du code"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q02": {
@@ -32,7 +32,7 @@
           "C) Déploiement d'applications web",
           "D) Visualisation de données"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q03": {
@@ -44,7 +44,7 @@
           "C) Le serveur tombe en panne",
           "D) Les utilisateurs changent leurs habitudes"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q04": {
@@ -56,7 +56,7 @@
           "C) Un accès gratuit aux données",
           "D) Une interface utilisateur graphique"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q05": {
@@ -68,7 +68,7 @@
           "C) Recall uniquement",
           "D) Nombre total de prédictions correctes"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q06": {
@@ -80,7 +80,7 @@
           "C) Une accélération de l'entraînement",
           "D) Une réduction de la consommation mémoire"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q07": {
@@ -92,7 +92,7 @@
           "C) API REST avec load balancer",
           "D) Base de données relationnelle"
         ],
-        "answer": "________________"
+        "answer": "C"
       },
       
       "q08": {
@@ -104,7 +104,7 @@
           "C) Suppression de la variable",
           "D) Conversion en numérique simple (1, 2, 3...)"
         ],
-        "answer": "________________"
+        "answer": "B"
       },
       
       "q09": {
@@ -116,7 +116,7 @@
           "C) Nombre de lignes de code",
           "D) Pourcentage d'erreurs 5xx"
         ],
-        "answer": "________________"
+        "answer": "C"
       },
       
       "q10": {
@@ -128,7 +128,7 @@
           "C) Le temps d'exécution du modèle",
           "D) La complexité algorithmique"
         ],
-        "answer": "________________"
+        "answer": "B"
       }
     },
     
@@ -141,8 +141,8 @@
           "# Enregistrer la précision du modèle",
           "accuracy = 0.85"
         ],
-        "code_template": "mlflow.________________('accuracy', accuracy)",
-        "answer": "________________"
+        "code_template": "mlflow.log_metric('accuracy', accuracy)",
+        "answer": "log_metric"
       },
       
       "c02": {
@@ -153,8 +153,8 @@
           "# Dataset avec colonne catégorielle 'category'",
           "df = pd.read_csv('data.csv')"
         ],
-        "code_template": "df_encoded = pd.________________(df, columns=['category'])",
-        "answer": "________________"
+        "code_template": "df_encoded = pd.get_dummies(df, columns=['category'])",
+        "answer": "get_dummies"
       },
       
       "c03": {
@@ -165,7 +165,7 @@
           "# X = features, y = target"
         ],
         "code_template": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=________________, random_state=42)",
-        "answer": "________________"
+        "answer": "0.2"
       },
       
       "c04": {
@@ -175,8 +175,8 @@
           "from sklearn.metrics import f1_score",
           "# y_true = vraies étiquettes, y_pred = prédictions"
         ],
-        "code_template": "f1 = ________________(y_true, y_pred)",
-        "answer": "________________"
+        "code_template": "f1 = f1_score(y_true, y_pred)",
+        "answer": "f1_score"
       },
       
       "c05": {
@@ -186,8 +186,8 @@
           "# Copier requirements.txt dans le container",
           "FROM python:3.9"
         ],
-        "code_template": "________________ requirements.txt /app/",
-        "answer": "________________"
+        "code_template": "COPY requirements.txt /app/",
+        "answer": "COPY"
       },
       
       "c06": {
@@ -198,8 +198,8 @@
           "from sklearn.ensemble import RandomForestClassifier",
           "model = RandomForestClassifier().fit(X_train, y_train)"
         ],
-        "code_template": "mlflow.sklearn.________________(model, 'random_forest_model')",
-        "answer": "________________"
+        "code_template": "mlflow.sklearn.log_mode(model, 'random_forest_model')",
+        "answer": "log_model"
       },
       
       "c07": {
@@ -209,8 +209,8 @@
           "import json",
           "# Charger configuration depuis config.json"
         ],
-        "code_template": "with open('config.json', 'r') as f:\n    config = json.________________(f)",
-        "answer": "________________"
+        "code_template": "with open('config.json', 'r') as f:\n    config = json.load(f)",
+        "answer": "load"
       },
       
       "c08": {
@@ -221,8 +221,8 @@
           "app = Flask(__name__)",
           "# Endpoint POST pour prédictions"
         ],
-        "code_template": "@app.route('/predict', methods=['________________'])\ndef predict():\n    return jsonify({'prediction': 42})",
-        "answer": "________________"
+        "code_template": "@app.route('/predict', methods=['POST'])\ndef predict():\n    return jsonify({'prediction': 42})",
+        "answer": "POST"
       },
       
       "c09": {
@@ -233,8 +233,8 @@
           "from sklearn.ensemble import RandomForestClassifier",
           "model = RandomForestClassifier()"
         ],
-        "code_template": "scores = cross_val_score(model, X, y, cv=________________)",
-        "answer": "________________"
+        "code_template": "scores = cross_val_score(model, X, y, cv=5)",
+        "answer": "5"
       },
       
       "c10": {
@@ -244,8 +244,8 @@
           "from sklearn.impute import SimpleImputer",
           "# Stratégie de remplacement par la médiane"
         ],
-        "code_template": "imputer = SimpleImputer(strategy='________________')",
-        "answer": "________________"
+        "code_template": "imputer = SimpleImputer(strategy='median')",
+        "answer": "median"
       }
     }
   }
